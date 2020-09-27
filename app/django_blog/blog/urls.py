@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .views import posts_list, PostDetail, tags_list, TagDetail, TagCreate, PostCreate, TagUpdate, PostUpdate
+from .views import posts_list, PostDetail, tags_list, TagDetail, TagCreate,\
+                   PostCreate, TagUpdate, PostUpdate, TagDelete
 
 
 urlpatterns = [
@@ -11,5 +12,6 @@ urlpatterns = [
     path('tags/', tags_list, name='tags_detail_url'),
     path('tag/create/', TagCreate.as_view(), name='tag_create_url'),
     path('tag/<str:slug>/update/', TagUpdate.as_view(), name='tag_update_url'),
+    path('tag/<str:slug>/delete/', TagDelete.as_view(), name='tag_delete_url'),
     path('tag/<str:slug>/', TagDetail.as_view(), name='tag_detail_list_url')
 ]
