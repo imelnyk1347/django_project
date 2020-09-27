@@ -11,15 +11,15 @@ class ObjectDetailMixin:
 
 
 class ObjectCreateMixin:
-    form_model = None
+    model_form = None
     template = None
 
     def get(self, request):
-        form = self.form_model()
+        form = self.model_form()
         return render(request, self.template, context={'form': form})
 
     def post(self, request):
-        bound_form = self.form_model(request.POST)
+        bound_form = self.model_form(request.POST)
 
         if bound_form.is_valid():
             new_obj = bound_form.save()

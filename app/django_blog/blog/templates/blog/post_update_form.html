@@ -1,18 +1,16 @@
 {% extends 'blog/base_blog.html' %}
 
 {% block title %}
-    Tag Update '{{ post.title }}'
+    Post Update '{{ post.title }}'
 {% endblock %}
-
 
 {% block content %}
 
-    <form action='{{ tag.get_update_url }}' method='post'>
+    <form action='{{ post.get_update_url }}' method='post'>
 
         {% csrf_token %}
 
         {% for field in form %}
-
             <div class="form-group">
                 {% if field.errors %}
                     <div class="alert alert-danger">
@@ -26,7 +24,7 @@
 
         {% endfor %}
 
-        <button type="submit" class="btn btn-outline-primary">Update tag</button>
+        <button type="submit" class="btn btn-outline-primary">Update post</button>
 
     </form>
 
