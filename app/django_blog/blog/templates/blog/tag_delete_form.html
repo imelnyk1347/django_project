@@ -10,11 +10,13 @@
 {% block content %}
 
     <form action="{{ tag.get_delete_url }}" method="post">
+
         {% csrf_token %}
 
         <h3>Are you sure you want delete object '<b>{{ tag.title|title }}</b>' ?</h3>
         <a href="{% url 'tag_detail_list_url' slug=tag.slug %}" class="btn btn-outline-primary">Cancel</a>  <!-- or {{ tag.get_absolute_url }} -->
         <button type="submit" name="button" class="btn btn-danger">Delete</button>
+
     </form>
 
 {% endblock %}
