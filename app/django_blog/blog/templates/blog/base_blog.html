@@ -3,7 +3,7 @@
 {% block admin-panel %}
 
     <a href="" class="btn btn-success">Create</a>
-    <a href="" class="btn btn-warning">Edit</a>
-    <a href="" class="btn btn-danger">Delete</a>
+    <a href="{{ admin_object.get_update_url }}" class="btn btn-warning">Edit</a>
+    <a href="{{ admin_object.get_delete_url }}" class="btn btn-danger">Delete</a>
 
 {% endblock %}
